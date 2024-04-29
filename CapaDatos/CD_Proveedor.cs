@@ -3,32 +3,15 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDatos
 {
     public class CD_Proveedor
     {
-        public static CD_Proveedor _instancia = null;
+        public static readonly Lazy<CD_Proveedor> _instancia = new Lazy<CD_Proveedor>(() => new CD_Proveedor(), true);
+        public static CD_Proveedor Instancia => _instancia.Value;
 
-        private CD_Proveedor()
-        {
-
-        }
-
-        public static CD_Proveedor Instancia
-        {
-            get
-            {
-                if (_instancia == null)
-                {
-                    _instancia = new CD_Proveedor();
-                }
-                return _instancia;
-            }
-        }
+        private CD_Proveedor() { }
 
         public List<Proveedor> ObtenerProveedor()
         {
@@ -62,7 +45,7 @@ namespace CapaDatos
                     return rptListaProveedor;
 
                 }
-                catch (Exception ex)
+                catch
                 {
                     rptListaProveedor = null;
                     return rptListaProveedor;
@@ -93,7 +76,7 @@ namespace CapaDatos
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
 
                 }
-                catch (Exception ex)
+                catch
                 {
                     respuesta = false;
                 }
@@ -127,7 +110,7 @@ namespace CapaDatos
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
 
                 }
-                catch (Exception ex)
+                catch
                 {
                     respuesta = false;
                 }
@@ -157,7 +140,7 @@ namespace CapaDatos
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
 
                 }
-                catch (Exception ex)
+                catch
                 {
                     respuesta = false;
                 }

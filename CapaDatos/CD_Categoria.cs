@@ -11,24 +11,10 @@ namespace CapaDatos
 {
     public class CD_Categoria
     {
-        public static CD_Categoria _instancia = null;
+        public static readonly Lazy<CD_Categoria> _instancia = new Lazy<CD_Categoria>(() => new CD_Categoria(), true);
+        public static CD_Categoria Instancia => _instancia.Value;
 
-        private CD_Categoria()
-        {
-
-        }
-
-        public static CD_Categoria Instancia
-        {
-            get
-            {
-                if (_instancia == null)
-                {
-                    _instancia = new CD_Categoria();
-                }
-                return _instancia;
-            }
-        }
+        private CD_Categoria() { }
 
         public List<Categoria> ObtenerCategoria()
         {

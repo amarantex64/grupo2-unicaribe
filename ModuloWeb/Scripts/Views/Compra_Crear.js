@@ -51,7 +51,7 @@ $(document).ready(function () {
                 "searchable": false,
                 "width": "90px"
             },
-            { "data": "RUC" },
+            { "data": "RNC" },
             { "data": "Nombre" },
             { "data": "Direccion" }
 

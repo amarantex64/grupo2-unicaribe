@@ -14,25 +14,10 @@ namespace CapaDatos
 {
     public class CD_Venta
     {
+        public static readonly Lazy<CD_Venta> _instancia = new Lazy<CD_Venta>(() => new CD_Venta(), true);
+        public static CD_Venta Instancia => _instancia.Value;
 
-        public static CD_Venta _instancia = null;
-
-        private CD_Venta()
-        {
-
-        }
-
-        public static CD_Venta Instancia
-        {
-            get
-            {
-                if (_instancia == null)
-                {
-                    _instancia = new CD_Venta();
-                }
-                return _instancia;
-            }
-        }
+        private CD_Venta() { }
 
         public int RegistrarVenta(string Detalle)
         {

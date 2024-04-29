@@ -11,24 +11,10 @@ namespace CapaDatos
 {
     public class CD_Cliente
     {
-        public static CD_Cliente _instancia = null;
+        public static readonly Lazy<CD_Cliente> _instancia = new Lazy<CD_Cliente>(() => new CD_Cliente(), true);
+        public static CD_Cliente Instancia => _instancia.Value;
 
-        private CD_Cliente()
-        {
-
-        }
-
-        public static CD_Cliente Instancia
-        {
-            get
-            {
-                if (_instancia == null)
-                {
-                    _instancia = new CD_Cliente();
-                }
-                return _instancia;
-            }
-        }
+        private CD_Cliente() { }
 
 
         public List<Cliente> ObtenerClientes()

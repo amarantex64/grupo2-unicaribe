@@ -31,7 +31,7 @@ $(document).ready(function () {
         },
         "columns": [
             { "data": "Nombre" },
-            { "data": "RUC" },
+            { "data": "RNC" },
             { "data": "Direccion" },
             { "data": "Telefono" },
             {

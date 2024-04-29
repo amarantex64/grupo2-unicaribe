@@ -14,24 +14,10 @@ namespace CapaDatos
     
     public class CD_Usuario
     {
-        public static CD_Usuario _instancia = null;
+        public static readonly Lazy<CD_Usuario> _instancia = new Lazy<CD_Usuario>(() => new CD_Usuario(), true);
+        public static CD_Usuario Instancia => _instancia.Value;
 
-        private CD_Usuario()
-        {
-
-        }
-
-        public static CD_Usuario Instancia
-        {
-            get
-            {
-                if(_instancia == null)
-                {
-                    _instancia = new CD_Usuario();
-                }
-                return _instancia;
-            }
-        }
+        private CD_Usuario() { }
 
         public int LoginUsuario(string Usuario, string Clave)
         {

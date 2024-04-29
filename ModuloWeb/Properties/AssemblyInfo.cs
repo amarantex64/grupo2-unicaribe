@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // conjunto de atributos. Cambie los valores de estos atributos para modificar la información
 // asociada con un ensamblado.
 [assembly: AssemblyTitle("ModuloWeb")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Proyecto final del Grupo 2 de UNICARIBE")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("UNICARIBE")]
 [assembly: AssemblyProduct("ModuloWeb")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]

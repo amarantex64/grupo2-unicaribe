@@ -11,24 +11,11 @@ namespace CapaDatos
 {
     public class CD_Permisos
     {
-        public static CD_Permisos _instancia = null;
+        public static readonly Lazy<CD_Permisos> _instancia = new Lazy<CD_Permisos>(() => new CD_Permisos(), true);
+        public static CD_Permisos Instancia => _instancia.Value;
 
-        private CD_Permisos()
-        {
+        private CD_Permisos() { }
 
-        }
-
-        public static CD_Permisos Instancia
-        {
-            get
-            {
-                if (_instancia == null)
-                {
-                    _instancia = new CD_Permisos();
-                }
-                return _instancia;
-            }
-        }
         public List<Permisos> ObtenerPermisos(int IdRol)
         {
             List<Permisos> rptListaPermisos = new List<Permisos>();

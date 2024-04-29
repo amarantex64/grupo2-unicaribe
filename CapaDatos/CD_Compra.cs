@@ -14,24 +14,10 @@ namespace CapaDatos
 {
     public class CD_Compra
     {
-        public static CD_Compra _instancia = null;
+        public static readonly Lazy<CD_Compra> _instancia = new Lazy<CD_Compra>(() => new CD_Compra(), true);
+        public static CD_Compra Instancia => _instancia.Value;
 
-        private CD_Compra()
-        {
-
-        }
-
-        public static CD_Compra Instancia
-        {
-            get
-            {
-                if (_instancia == null)
-                {
-                    _instancia = new CD_Compra();
-                }
-                return _instancia;
-            }
-        }
+        private CD_Compra() { }
 
         public bool RegistrarCompra(string Detalle)
         {

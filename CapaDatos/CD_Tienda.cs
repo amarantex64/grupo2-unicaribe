@@ -11,24 +11,10 @@ namespace CapaDatos
 {
     public class CD_Tienda
     {
-        public static CD_Tienda _instancia = null;
+        public static readonly Lazy<CD_Tienda> _instancia = new Lazy<CD_Tienda>(() => new CD_Tienda(), true);
+        public static CD_Tienda Instancia => _instancia.Value;
 
-        private CD_Tienda()
-        {
-
-        }
-
-        public static CD_Tienda Instancia
-        {
-            get
-            {
-                if (_instancia == null)
-                {
-                    _instancia = new CD_Tienda();
-                }
-                return _instancia;
-            }
-        }
+        private CD_Tienda() { }
 
         public List<Tienda> ObtenerTiendas()
         {

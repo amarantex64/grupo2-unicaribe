@@ -12,24 +12,10 @@ namespace CapaDatos
 {
     public class CD_Reportes
     {
-        public static CD_Reportes _instancia = null;
+        public static readonly Lazy<CD_Reportes> _instancia = new Lazy<CD_Reportes>(() => new CD_Reportes(), true);
+        public static CD_Reportes Instancia => _instancia.Value;
 
-        private CD_Reportes()
-        {
-
-        }
-
-        public static CD_Reportes Instancia
-        {
-            get
-            {
-                if (_instancia == null)
-                {
-                    _instancia = new CD_Reportes();
-                }
-                return _instancia;
-            }
-        }
+        private CD_Reportes() { }
 
         public List<ReporteProducto> ReporteProductoTienda(int IdTienda, string CodigoProducto)
         {

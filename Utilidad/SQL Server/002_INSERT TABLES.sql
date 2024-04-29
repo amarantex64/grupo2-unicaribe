@@ -30,7 +30,7 @@ INSERT INTO SUBMENU(IdMenu,Nombre,Controlador,Vista,Icono) VALUES
 --((SELECT TOP 1 IdMenu FROM MENU WHERE Nombre = 'Compras'),'Registrar Compra','Compra','Crear','fas fa-cart-arrow-down'),
 --((SELECT TOP 1 IdMenu FROM MENU WHERE Nombre = 'Compras'),'Consultar Compra','Compra','Consultar','far fa-list-alt'),
 
-((SELECT TOP 1 IdMenu FROM MENU WHERE Nombre = 'Ventas'),'Tiendas','Tienda','Crear','fas fa-store-alt'),
+--((SELECT TOP 1 IdMenu FROM MENU WHERE Nombre = 'Ventas'),'Tiendas','Tienda','Crear','fas fa-store-alt'),
 ((SELECT TOP 1 IdMenu FROM MENU WHERE Nombre = 'Ventas'),'Registrar Venta','Venta','Crear','fas fa-cash-register'),
 ((SELECT TOP 1 IdMenu FROM MENU WHERE Nombre = 'Ventas'),'Consultar Venta','Venta','Consultar','far fa-clipboard')
 
